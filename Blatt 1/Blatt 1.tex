@@ -1,0 +1,29 @@
+\documentclass{../mfa}
+\sheet{1}
+\begin{document}
+\maketitle
+
+\section{}
+\subsection{}
+Wir nehmen an, $\mbf{v}_1$ und $\mbf{v}_2$ seien linear abhängig. Folglich existieren
+$\alpha_1,~\alpha_2 \in \mathbb{K}$, sodass $\alpha_1 \mbf{v}_1 + \alpha_2 \mbf{v}_2 = \mbf{0}$
+\begin{align}
+   \alpha_1 \mbf{v}_1 + \alpha_2 \mbf{v}_2 &= \mbf{0} & \hspace{1cm} & | \cdot A
+   \\
+   \alpha_1 A \mbf{v}_1 + \alpha_2 A \mbf{v}_2 &= \mbf{0} \\
+   \alpha_1 \lambda_1 \mbf{v}_1 + \alpha_2 \lambda_2 \mbf{v}_2 &= \mbf{0} & & | \mbf{v}_i~\text{Eigenvektoren}
+\end{align}
+
+Multipliziert man (1) mit $\lambda_1$, so erhält man \setcounter{equation}{5}
+\begin{align}
+   \alpha_1 \lambda_1 \mbf{v}_1 + \alpha_2 \lambda_1 \mbf{v}_2 &= \mbf{0} \\
+   \intertext{Subtraktion (1) $-$ (6) ergibt}
+   \mbf{0} + (\lambda_2 - \lambda_1)\alpha_2 \mbf{v}_2 &= \mbf{0}
+\end{align}
+Es muss also entweder (a) $\lambda_1 = \lambda_2$ oder (b) $\alpha_2 = 0$ oder
+(c) $\mbf{v}_2 = \mbf{0}$ gelten. (a) gilt nicht nach Aufgabenstellung. (b) gilt nicht
+aufgrund der Definition der linearen Unabhängigkeit. (c) gilt nicht aufgrund der
+Definition eines Eigenvektors. Aus dem Widerspuch folgt, dass $\mbf{v}_1$ und
+$\mbf{v}_2$ linear unabhängig sein müssen.
+   
+\end{document}
