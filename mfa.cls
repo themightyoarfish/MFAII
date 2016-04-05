@@ -6,7 +6,7 @@
 \newcommand*{\sheet}[1]{\setcounter{sheetno}{#1}}
 
 %% packages
-\RequirePackage{lmodern, hyperref, array, amsmath, amssymb, microtype,
+\RequirePackage{lmodern, hyperref, array, amsmath, amsthm, amssymb, microtype,
 IEEEtrantools, titlesec, titling, mathptmx}
 \RequirePackage[utf8x]{inputenc}
 \RequirePackage[dvipsnames]{xcolor}
