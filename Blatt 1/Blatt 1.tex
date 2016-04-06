@@ -94,4 +94,111 @@ $A_1$ hat also Eigenwerte
    \lambda_2 &= 3 
 \end{align*}
 
+Wir berechnen die Eigenvektoren.
+
+$\mbf{\lambda_1:}$
+\par 
+\begin{align*}
+   0x_1 + 2x_2 &= 0 \\
+   0x_1 + 2x_2 &= 0
+\end{align*}
+also ist $x_2 = 0$ und $x_1$ beliebig $\Rightarrow \v{1} = \begin{pmatrix} 1 \\
+0 \end{pmatrix}$ oder irgendein Vielfaches. Der Eigenraum zu $\lambda_1$ ist
+also der Spann von (die Gerade durch) $\v{1}$ oder $\{\mu \cdot \v{1} \mid \mu
+\in \mathbb{K}\}$.
+
+$\mbf{\lambda_2:}$
+\par 
+\begin{align*}
+   -2x_1 + 2x_2 &= 0 \\
+   0          &= 0 \\
+   \intertext{Es folgt}
+   x_1        &= x_2
+\end{align*}
+$\Rightarrow \v{2} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$. Der Eigenraum zu
+   $\lambda_2$ ist $\{\mu \cdot \v{2} \mid \mu \in \mathbb{K}\}$
+
+\subsection{$A_2$}
+
+Es ist $\chi_{A_2}(\lambda) = det(A_2 - \lambda I) = 
+\left|
+\begin{pmatrix}
+   3-\lambda & 2 \\
+   -2 & -2 - \lambda
+\end{pmatrix}
+\right|= (3 - \lambda)(-2 - \lambda) + 4 = \lambda^2 - \lambda -2$. Die
+pq-Formel liefert hierfür
+\begin{align*}
+   \lambda_{1,2} & = \frac{1}{2} \pm \sqrt{\frac{1}{4} + 2} \\
+   \lambda_1     & = 2                                        \\
+   \lambda_2     & = -1                                       \\
+\end{align*}
+
+Wir berechnen die Eigenvektoren.
+
+$\mbf{\lambda_1:}$
+\par 
+\begin{align*}
+   1x_1 + 2x_2 &= 0 \\
+   -2x_1  -4x_2 &= 0 \\
+   \Rightarrow x_1 = -2x_2
+\end{align*}
+$\Rightarrow \v{1} = \begin{pmatrix} -2 \\ 1 \end{pmatrix}$ oder irgendein Vielfaches. Der Eigenraum zu $\lambda_1$ ist
+also der Spann von (die Gerade durch) $\v{1}$ oder $\{\mu \cdot \v{1} \mid \mu
+\in \mathbb{K}\}$.
+
+$\mbf{\lambda_2:}$
+\par 
+\begin{align*}
+   4x_1 + 2x_2 &= 0 \\
+   -2x_1 -1x_2 &= 0 \\
+   \Rightarrow x_2 = -2x_1
+\end{align*}
+$\Rightarrow \v{2} = \begin{pmatrix} 1 \\ -2 \end{pmatrix}$. Der Eigenraum zu
+   $\lambda_2$ ist $\{\mu \cdot \v{2} \mid \mu \in \mathbb{K}\}$
+
+\subsection{$A_3$}
+
+Es ist $\chi_{A_3}(\lambda) = det(A_3 - \lambda I) = 
+\left|
+\begin{pmatrix}
+   -3-\lambda & -1 \\
+   1 & -3 - \lambda
+\end{pmatrix}
+\right|= \lambda^2 +6\lambda + 10$. Die
+pq-Formel liefert hierfür
+\begin{align*}
+   \lambda_{1,2} & = -3 \pm \sqrt{3 - 10} \\
+   \intertext{Die Matrix hat also nur komplexe Eigenwerte.}
+   \lambda_1     & = -3 + i                                        \\
+   \lambda_2     & = -3 -i                                       \\
+\end{align*}
+
+Wir berechnen die Eigenvektoren.
+
+$\mbf{\lambda_1:}$
+\par 
+\begin{align*}
+   -ix_1  -x_2 &= 0 \\
+   x_1  -ix_2 &= 0 \\
+   \Rightarrow x_1 = ix_2
+\end{align*}
+$\Rightarrow \v{1} = \begin{pmatrix} i \\ 1 \end{pmatrix}$ oder irgendein
+   Vielfaches. Der Eigenraum zu $\lambda_1$ ist also der Spann von (die Gerade
+   durch) $\v{1}$ oder $\{\mu \cdot \v{1} \mid \mu \in \mathbb{K}\}$.
+
+$\mbf{\lambda_2:}$
+\par 
+\begin{align*}
+   ix_1  -x_2 &= 0 \\
+   x1  + ix_2 &= 0 \\
+   \Rightarrow x_2 = ix_1
+\end{align*}
+$\Rightarrow \v{2} = \begin{pmatrix} 1 \\ i \end{pmatrix}$. Der Eigenraum zu
+   $\lambda_2$ ist $\{\mu \cdot \v{2} \mid \mu \in \mathbb{K}\}$
+
+Es ist offensichtlich, dass für $A_1, A_2, A_3$ die beiden Eigenvektoren jeweils
+linear unabhängig sind. Da es sich um $2\times 2$-Matrizen handelt, findet Satz
+11.10 Anwendung und die Matrizen sind mit $P_i = \begin{pmatrix}\v{1}, \v{2}
+\end{pmatrix}$ diagonalisierbar.
 \end{document}
