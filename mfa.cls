@@ -19,7 +19,8 @@ IEEEtrantools, titlesec, titling, mathptmx}
 \titleformat{\subsection}[hang]{\bf}{(\arabic{subsection})}{1em}{}[]
 
 %% Metadata
-\author{Rasmus Diederichsen}
+\author{Rasmus Diederichsen \and Laura Goerke \and Tim Brockmeyer \and Katharina
+Filodda}
 \date{\today}
 \title{Mathematik für Anwender II --- Blatt \arabic{sheetno}}
 
