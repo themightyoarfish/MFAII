@@ -122,4 +122,37 @@ Der Kern von $f$ ist $\neq \{\mbf{0}\}$. Nach Satz 1.11 ist $f$ also nicht injek
    nicht beides.
 \end{proof}
 
+\subsection{}
+
+Für Aussagen $A, B, C$ gilt 
+\begin{align*}
+   & A \wedge B  \rightarrow C \\
+   \Leftrightarrow & \neg (A \wedge B)  \rightarrow C \\
+   \Leftrightarrow & \neg A \vee \neg B  \vee C \\
+   \Leftrightarrow & \neg B  \vee \neg (A \wedge \neg C) \\
+   \Leftrightarrow & A \wedge \neg C  \rightarrow \neg B
+\end{align*}
+
+Die Aussage ist also logisch äquivalent zu folgender:
+\begin{equation*}
+   span(\v{1}, \ldots, \v{n}) = V \wedge \neg f~\text{injektiv} \Rightarrow \neg
+   f(\v{1}, \ldots, \v{n}) ~\text{linear unabhängig.}
+\end{equation*}
+
+\begin{proof}
+Seien $\mbf{u}_1, \mbf{u}_2 \in V$ gegeben mit $\mbf{u}_1 \neq \mbf{u}_2$ und
+$f(\mbf{u}_1) =
+f(\mbf{u}_2)$. Nach Vorraussetzung existieren Koeffizienten $\alpha_i, \beta_i \in
+\mathbb{K}$ mit 
+\begin{align*}
+   \alpha_1 \v{1} + \ldots + \alpha_n \v{n} &= \mbf{u}_1 \\
+   \beta_1 \v{1} + \ldots + \beta_n \v{n} &= \mbf{u}_2 \\
+   \intertext{Also:}
+   f(\alpha_1 \v{1} + \ldots + \alpha_n \v{n}) &= f(\mbf{u}_1) = f(\mbf{u}_2) =
+   f(\beta_1 \v{1} + \ldots + \beta_n \v{n}) \\
+   f\left(\sum \alpha_i \v{i}\right) - f\left(\sum \beta_i \v{i}\right) &= \mbf{0} \\
+   \sum (\alpha_i - \beta_i)f(\v{i}) &= \mbf{0}
+\end{align*}
+Also sind die $f(\v{i})$ linear abhängig.
+\end{proof}
 \end{document}
