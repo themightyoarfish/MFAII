@@ -1,5 +1,6 @@
 \documentclass{../mfa}
 \sheet{2}
+\usepackage{enumitem}
 \begin{document}
 \maketitle
 \renewcommand{\v}[1]{\mbf{v}_{#1}}
@@ -71,5 +72,54 @@ $\begin{pmatrix} 1 & 0 & 1 \end{pmatrix}^T$ wird z.\,B. nicht getroffen. Somit
 ist $f$ nicht surjektiv und auch nicht bijektiv.
 
 Der Kern von $f$ ist $\neq \{\mbf{0}\}$. Nach Satz 1.11 ist $f$ also nicht injektiv.
+
+\section{}
+\subsection{}
+
+\begin{proof}
+   Angenommen, $\{\v{1}, \ldots, \v{n}\}$ sind linear abhängig. Somit existieren
+   $\alpha_1, \ldots \alpha_n \in V$, sodass
+   \begin{align*}
+      \sum_{i=1}^n \alpha_i \v{i} &= \mbf{0},\\
+      \intertext{mit $\exists i : \alpha_i \neq 0$. Anwendung von $f$ ergibt}
+      \sum_{i=1}^n \alpha_i f(\v{i}) &= f(\mbf{0}) = \mbf{0}\\
+   \end{align*}
+   Da nicht $\alpha_i = 0 ~\forall i$, sind $\{f(\v{1}), \ldots, f(\v{n})\}$
+   linear abhängig.
+\end{proof}
+
+\subsection{}
+
+\begin{proof}
+   Angenommen, $\{f(\v{1}), \ldots, f(\v{n})\}$ sind linear abhängig. Somit
+   existieren $\beta_1, \ldots, \beta_n \in W$  mit $\exists i : \alpha_i \neq
+   0$. Mithin
+   \begin{align*}
+      \beta_1 f(\v{1}) + \ldots + \beta_n f(\v{n}) &= 0 & | -\beta_n f(\v{n})\\
+      \beta_1 f(\v{1}) + \ldots + \beta_{n-1} f(\v{n-1}) &= -\beta_n f(\v{n})\\
+      f\left(\sum_{i=1}^{n-1}\beta_i \v{i}\right) &=f(-\beta_n \v{n})
+   \end{align*}
+   Es gilt nun, zwei Fälle zu unterscheinden.
+   \begin{itemize}[align=left]
+      \item[\bfseries $f$ ist injektiv:] Es gilt wegen der Injektivität
+         $\sum_{i=1}^{n-1}\beta_i \v{i} = -\beta_n \v{n}$. Daher
+         $\sum_{i=1}^{n}\beta_i \v{i} = \mbf{0}$, wobei nicht
+         alle $\beta_i = 0$ sind. Die $\v{i}$ sind also linear abhängig.
+      \item[\bfseries $\v{i}$ sind linear unabhängig:] Es gilt wie oben
+         \begin{align*}
+            \beta_1 f(\v{1}) + \ldots + \beta_n f(\v{n}) &= \mbf{0} \\
+            f(\beta_1 \v{1} + \ldots + \beta_n \v{n}) &= \mbf{0} \\
+            \intertext{mit $\beta_1 \v{1} + \ldots + \beta_n \v{n} \neq \mbf{0}$, da
+            nicht alle $\beta_i = 0$ sind. Allerdings ist auch}
+            f(\mbf{0}) &= \mbf{0}, \\
+            \intertext{denn $f$ ist linear. $f$ kann also nicht injektiv sein,
+            da zwei ungleiche $\v{i} \in V$ auf das selbe Element in $W$
+         abgebildet werden.}
+         \end{align*}
+   \end{itemize}
+   Falls also $f(\v{1}), \ldots, f(\v{n})$ linear abhängig sind, sind entweder
+   $\v{1}, \ldots, \v{n}$ linear abhängig, oder $f$ ist nicht injektiv, aber
+   nicht beides.
+\end{proof}
 
 \end{document}
