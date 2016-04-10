@@ -155,4 +155,42 @@ f(\mbf{u}_2)$. Nach Vorraussetzung existieren Koeffizienten $\alpha_i, \beta_i \
 \end{align*}
 Also sind die $f(\v{i})$ linear abhängig.
 \end{proof}
+
+\section{}
+\subsection{}
+$Ker(\varphi)$ ist der Lösungsraum des Gleichungssystems
+\begin{align}
+   2x_1     +  x_3  &=  0 \\
+   2x_1  +  x_2    &=  0 \\
+   4x_1  +  x_2  +  x_3  &=  0 \\
+   \intertext{Subtraktion von (3) - (1) - (2) ergibt}
+   \nonumber 2x_1     +  x_3  &=  0 \\
+   \nonumber 2x_1  +  x_2    &=  0 \\
+   \nonumber 0      &=  0 \\
+   \intertext{und daher}
+   \nonumber x_1 &= -\frac{1}{2}x_3 \\
+   \nonumber x_1 &= -\frac{1}{2}x_2 \\
+   \nonumber x_2 &= x_3
+\end{align}
+Also ist $Ker(\varphi) = \left\{\begin{pmatrix} -0.5k & k & k \end{pmatrix}^T \mid k \in
+\mathbb{R}\right\}$. Offensichtlich ist $dim(Ker(\varphi)) = 1$.
+
+\subsection{}
+
+$dim V = dim_\mathbb{R}(Bild(\varphi)) + dim(Ker(\varphi)) \Rightarrow dim(Bild(\varphi)) = 2$
+
+\subsection{}
+
+Eine Basis von $Bild(\varphi)$ ist die maximale Zahl linear unabhängiger Spalten
+von $A$ (siehe Definition 1.9), also beispielsweise 
+\begin{equation*}
+   \left\{
+      \begin{pmatrix}
+         0 \\ 1 \\ 1
+      \end{pmatrix},
+      \begin{pmatrix}
+         1 \\ 0 \\ 1
+      \end{pmatrix}
+   \right\}
+\end{equation*}
 \end{document}
