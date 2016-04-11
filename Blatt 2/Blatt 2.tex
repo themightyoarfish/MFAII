@@ -193,4 +193,56 @@ von $A$ (siehe Definition 1.9), also beispielsweise
       \end{pmatrix}
    \right\}
 \end{equation*}
+
+\section{}
+
+\subsection{$f$ ist linear \& Bestimmung der Matrix}
+
+Da Addition, Subtraktion und Multiplikation in $\mathbb{C}$ kommutativ und
+distributiv sind, ist die Lienarität eigentlich trivial. Wir rechnen nach:
+
+Seien $(z_1, z_2, z_3)$ und $(y_1, y_2, y_3) \in \mathbb{C}^3$.
+\begin{align*}
+   f(z_1 + y_1, z_2 + y_2, z_3 + y_3) & = (z_1 + y_1 +i(z_2 + y_2) - (z_3 + y_3), i(z_1 + y_1) - (z_2 + y_2) + (1+i)(z_3 + y_3)) \\
+                                      & = (z_1 + y_1 + iz_2 + iy_2 - z_3 - y_3, iz_1 + iy_1 - z_2 - y_2 + (1+i)z_3 + (1+i)y_3)   \\
+                                      & = (y_1 + iy_2 - y_3, iy_1 - y_2 + (1+i)y_3) + (y_1 + iy_2 - y_3, iy_1 - y_2 + (1+i)y_3)  \\
+                                      & = f(y_1, y_2, y_3) + f(y_1, y_2, y_3)
+\end{align*}
+
+Sei zudem $\alpha \in \mathbb{C}$.
+\begin{align*}
+   f(\alpha z_1, \alpha z_2, \alpha z_3) & = (\alpha z_1, \alpha i z_2 - \alpha z_3, \alpha i z_1 - \alpha z_2 + \alpha (1+i)z_3) \\
+                                         & = \alpha f(z_1, z_2, z_3)
+\end{align*}
+
+Die Matrix $A_f$ muss offensichtlich $\in \mathbb{C}^{2 \times 3}$ sein.
+Aus der Abbildungsvorschrift lässt sich sofort ablesen.
+\begin{align*}
+A_f &= \begin{pmatrix} 1 & i & -1 \\ i & -1 & (1+i) \end{pmatrix}
+\xrightarrow{II - i\cdot I} \begin{pmatrix} 1 & i & -1 \\ 0 & 0 & 1 +2i\end{pmatrix}
+\end{align*}
+
+\subsection{Kern, Bild \& Dimensionen}
+
+Der Kern von $f$ ist der Lösungsraum von $A_f\mbf{x} = 0$:
+\begin{align*}
+   x_1 + ix_2 -x_3 & = 0     \\
+   (1+2i)x_3       & = 0     \\
+   \Rightarrow x_3 & = 0     \\
+   \Rightarrow x_1 & = -ix_2
+\end{align*}
+
+\newcommand{\inlinepmatrix}[1]{\begin{pmatrix}#1\end{pmatrix}}
+
+\begin{equation*}
+   Ker(f) = \left\{k \begin{pmatrix}-i & 1 & 0\end{pmatrix}^T \mid k \in
+\mathbb{C} \right\} \text{ und } dim_\mathbb{C}(Ker(f)) = 1.
+\end{equation*}
+
+\begin{equation*}
+   Bild(f) = span\left\{\inlinepmatrix{i \\ -1}, \inlinepmatrix{-1 \\
+   1+i}\right\},
+\end{equation*}
+denn die ersten zwei Spalten von $A_f$ sind linear abhängig.
+Also $dim_\mathbb{C}(Bild(f)) = 2$.
 \end{document}

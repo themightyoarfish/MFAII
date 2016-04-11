@@ -7,7 +7,7 @@
 
 %% packages
 \RequirePackage{lmodern, hyperref, array, amsmath, amsthm, amssymb, microtype,
-IEEEtrantools, titlesec, titling, mathptmx}
+IEEEtrantools, titlesec, titling, mathptmx, mathtools}
 \RequirePackage[utf8x]{inputenc}
 \RequirePackage[dvipsnames]{xcolor}
 \RequirePackage[ngerman]{babel}
