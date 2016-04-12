@@ -21,6 +21,18 @@
 -2a_1 + 2c_1 - 2a_2 + 2c_2
 \end{pmatrix} = f\left(A) + f(D\right)
 \end{align*}
+
+\begin{align*}
+         f\left(\alpha A\right) &= f\left(\begin{pmatrix} \alpha a & \alpha b\\ \alpha \cdot 0 & \alpha c
+   \end{pmatrix}\right) \\
+   &= \begin{pmatrix}
+   \alpha a - \alpha c \\
+   3\alpha b \\
+   -2\alpha a + 2\alpha c
+\end{pmatrix} \\
+&= \alpha f(A)
+\end{align*}
+
 $f$ ist also linear.
 \item[$g$:] Es seien $p_1(x) = a_1x^2 + b_1x + c_1$ und $p_2(x) = a_2x^2 + b_2x
    + c_2$.
@@ -91,36 +103,48 @@ Der Kern von $f$ ist $\neq \{\mbf{0}\}$. Nach Satz 1.11 ist $f$ also nicht injek
 \subsection{}
 
 \begin{proof}
-   Angenommen, $\{f(\v{1}), \ldots, f(\v{n})\}$ sind linear abhängig. Somit
-   existieren $\beta_1, \ldots, \beta_n \in \mathbb{K}$  mit $\exists i : \beta_i \neq
-   0$, sodass
+   Sei $\sum_{i=1}^n \alpha_i f(\v{i}) = 0$ mit $\alpha_i$ beliebig. Da $f$
+   linear ist, gilt 
    \begin{align*}
-      \beta_1 f(\v{1}) + \ldots + \beta_n f(\v{n}) &= 0 & | -\beta_n f(\v{n})\\
-      \beta_1 f(\v{1}) + \ldots + \beta_{n-1} f(\v{n-1}) &= -\beta_n f(\v{n})\\
-      f\left(\sum_{i=1}^{n-1}\beta_i \v{i}\right) &=f(-\beta_n \v{n})
+      f\left(\sum_{i=1}^n \alpha_i \v{i}\right) & = 0 \\
+      \intertext{Da $f$ linear und injektiv ist, ist $Ker(f)=\{\mbf{0}\}$}
+      \sum_{i=1}^n \alpha_i \v{i} &= 0 \\
+      \intertext{Da die $\v{i}$ linear unabhängig sind, ist}
+      \alpha_i &= 0
    \end{align*}
-   Es gilt nun, zwei Fälle zu unterscheinden.
-   \begin{itemize}[align=left]
-      \item[\bfseries $f$ ist injektiv:] Es gilt wegen der Injektivität
-         $\sum_{i=1}^{n-1}\beta_i \v{i} = -\beta_n \v{n}$. Daher
-         $\sum_{i=1}^{n}\beta_i \v{i} = \mbf{0}$, wobei nicht
-         alle $\beta_i = 0$ sind. Die $\v{i}$ sind also linear abhängig.
-      \item[\bfseries $\v{i}$ sind linear unabhängig:] Es gilt wie oben
-         \begin{align*}
-            \beta_1 f(\v{1}) + \ldots + \beta_n f(\v{n}) &= \mbf{0} \\
-            f(\beta_1 \v{1} + \ldots + \beta_n \v{n}) &= \mbf{0} \\
-            \intertext{mit $\beta_1 \v{1} + \ldots + \beta_n \v{n} \neq \mbf{0}$, da
-            nicht alle $\beta_i = 0$ sind. Allerdings ist auch}
-            f(\mbf{0}) &= \mbf{0}, \\
-            \intertext{denn $f$ ist linear. $f$ kann also nicht injektiv sein,
-            da zwei ungleiche $\v{i} \in V$ auf das selbe Element in $W$
-         abgebildet werden.}
-         \end{align*}
-   \end{itemize}
-   Falls also $f(\v{1}), \ldots, f(\v{n})$ linear abhängig sind, sind entweder
-   $\v{1}, \ldots, \v{n}$ linear abhängig, oder $f$ ist nicht injektiv, ein
-   Widerspruch.
+   Also sind die $f(\v{i})$ auch linear unabhängig.
 \end{proof}
+% \begin{proof}
+   % Angenommen, $\{f(\v{1}), \ldots, f(\v{n})\}$ sind linear abhängig. Somit
+   % existieren $\beta_1, \ldots, \beta_n \in \mathbb{K}$  mit $\exists i : \beta_i \neq
+   % 0$, sodass
+   % \begin{align*}
+   %    \beta_1 f(\v{1}) + \ldots + \beta_n f(\v{n}) &= 0 & | -\beta_n f(\v{n})\\
+   %    \beta_1 f(\v{1}) + \ldots + \beta_{n-1} f(\v{n-1}) &= -\beta_n f(\v{n})\\
+   %    f\left(\sum_{i=1}^{n-1}\beta_i \v{i}\right) &=f(-\beta_n \v{n})
+   % \end{align*}
+   % Es gilt nun, zwei Fälle zu unterscheinden.
+   % \begin{itemize}[align=left]
+   %    \item[\bfseries $f$ ist injektiv:] Es gilt wegen der Injektivität
+   %       $\sum_{i=1}^{n-1}\beta_i \v{i} = -\beta_n \v{n}$. Daher
+   %       $\sum_{i=1}^{n}\beta_i \v{i} = \mbf{0}$, wobei nicht
+   %       alle $\beta_i = 0$ sind. Die $\v{i}$ sind also linear abhängig.
+   %    \item[\bfseries $\v{i}$ sind linear unabhängig:] Es gilt wie oben
+   %       \begin{align*}
+   %          \beta_1 f(\v{1}) + \ldots + \beta_n f(\v{n}) &= \mbf{0} \\
+   %          f(\beta_1 \v{1} + \ldots + \beta_n \v{n}) &= \mbf{0} \\
+   %          \intertext{mit $\beta_1 \v{1} + \ldots + \beta_n \v{n} \neq \mbf{0}$, da
+   %          nicht alle $\beta_i = 0$ sind. Allerdings ist auch}
+   %          f(\mbf{0}) &= \mbf{0}, \\
+   %          \intertext{denn $f$ ist linear. $f$ kann also nicht injektiv sein,
+   %          da zwei ungleiche $\v{i} \in V$ auf das selbe Element in $W$
+   %       abgebildet werden.}
+   %       \end{align*}
+   % \end{itemize}
+   % Falls also $f(\v{1}), \ldots, f(\v{n})$ linear abhängig sind, sind entweder
+   % $\v{1}, \ldots, \v{n}$ linear abhängig, oder $f$ ist nicht injektiv, ein
+   % Widerspruch.
+% \end{proof}
 
 \subsection{}
 
