@@ -40,3 +40,6 @@ Filodda}
 \newcommand{\mbf}[1]{\mathbf{#1}}
 
 \setlength{\parindent}{0pt}
+
+\newcommand{\inlinepmatrix}[1]{\begin{pmatrix}#1\end{pmatrix}}
+
