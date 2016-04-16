@@ -1,0 +1,74 @@
+\documentclass{../mfa}
+\sheet{3}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc,intersections}
+\begin{document}
+\maketitle
+\renewcommand{\v}[1]{\mbf{v}_{#1}}
+\section{}
+\subsection{}
+\subsection{}
+\subsection{}
+
+\section{}
+\subsection{}
+\subsection{}
+\subsection{}
+\begin{tikzpicture}
+   \draw[thick,->,name path=stdx] (0,0) -- ++(0:3) node[below right] {Kanonische Basis};
+   \draw[thick,->,name path=stdy] (0,0) -- ++(90:3);
+
+   \draw[thick,dashed,->,name path=bx] (0,0) -- (-45:3);
+   \draw[thick,dashed,->,name path=by] (0,0) -- (45:3) node[below right] {$\mathcal{B}$};
+
+   \draw[fill=red] (1,2) coordinate (v1) circle (2pt) node[above right=1em and .5em] {$\varphi_\mathcal{B}(\v{1})=(1.5,-0.5)$};
+   \draw[fill=red] (1,0) coordinate (v2) circle (2pt) node[above right=1em and .5em] {$\varphi_\mathcal{B}(\v{2})=(0.5,0.5)$};
+
+   \draw[dotted] (v1) -- ($(45:3)!(v1)!(0,0)$);
+   \draw[dotted] (v1) -- ($(-45:3)!(v1)!(0,0)$);
+   \draw[dotted] (v2) -- ($(45:3)!(v2)!(0,0)$);
+   \draw[dotted] (v2) -- ($(-45:3)!(v2)!(0,0)$);
+
+\end{tikzpicture}
+\subsection{}
+
+\section{}
+\subsection{}
+Die Bilder der Basisvektoren $\{\v{1}, \v{2}, \v{3}\}$ sind
+\begin{align*}
+   D(p(x)=1) &= (p^\prime(x) = 0) = 0\v{1} + 0\v{2} + 0\v{3}\\
+   D(p(x)=2) &= (p^\prime(x) = 1) = 1\v{1} + 0\v{2} + 0\v{3}\\
+   D(p(x)=3) &= (p^\prime(x) = 2x) = 0\v{1} + 2\v{2} + 0\v{3}\\
+\end{align*}
+Die darstellende Matrix ist also
+\begin{equation*}
+   A = \inlinepmatrix{0 & 1 & 0 \\ 0 & 0 & 2 \\ 0 & 0 & 0}
+\end{equation*}
+
+\subsection{}
+Der Kern von $D$ sind alle Polynome, deren Ableitung die Nullfunktion ist, also
+alle Konstanten Polynome. Der Kern hat Dimension $1$, denn $\{p(x)=1\}$ ist eine
+Basis.
+
+\section{}
+
+Seien $(\v{1}, \v{2}, \v{3}) = \mathcal{C}$
+\begin{align*}
+   \varphi_\mathcal{C}(a + bx +cx^2) & = \varphi_\mathcal{C}(a(\v{3} - \v{2} - (\v{1} - \v{3})) + b(\v{1} - \v{3}) + c(\v{1} + \v{2} - \v{3})) \\
+                                     & = \varphi_\mathcal{C}(a(-\v{2} - \v{1} +
+   2\v{3}) + b(\v{1} - \v{3}) + c(\v{1} + \v{2} - \v{3})) \\
+                                     & = \varphi_\mathcal{C}(-a\v{1} + b\v{1} +
+   c\v{1} -a\v{1} + c\v{2} + 2a\v{3} - b\v{3} - c\v{3}) \\
+                                     & = \left(-a +b +c, -a + c, 2a -b - c\right)
+\end{align*}
+
+\subsection{}
+Indem man die drei Polynome aus $\mathcal{B}$ ableitet und mithilfe der zweiten
+Zeile in der obigen Definition von $\varphi_\mathcal{C}$ nach $\mathcal{C}$
+übersetzt, ergibt sich.
+\begin{equation*}
+   A = \inlinepmatrix{0 & -1 & 1 \\ 0 & -1 & 0 \\ 0 & 2 & -1},
+\end{equation*}
+denn für $p^\prime(x) = 1$ ist nur $a=1$, für $p^\prime(x) = x$ nur $b=1$
+\end{document}
