@@ -53,7 +53,7 @@ Basis.
 
 \section{}
 
-Seien $(\v{1}, \v{2}, \v{3}) = \mathcal{C}$
+Seien $(\v{1}, \v{2}, \v{3}) = (1,x,x^2) = \mathcal{C}$
 \begin{align*}
    \varphi_\mathcal{C}(a + bx +cx^2) & = \varphi_\mathcal{C}(a(\v{3} - \v{2} - (\v{1} - \v{3})) + b(\v{1} - \v{3}) + c(\v{1} + \v{2} - \v{3})) \\
                                      & = \varphi_\mathcal{C}(a(-\v{2} - \v{1} +
@@ -66,9 +66,13 @@ Seien $(\v{1}, \v{2}, \v{3}) = \mathcal{C}$
 \subsection{}
 Indem man die drei Polynome aus $\mathcal{B}$ ableitet und mithilfe der zweiten
 Zeile in der obigen Definition von $\varphi_\mathcal{C}$ nach $\mathcal{C}$
-übersetzt, ergibt sich.
+übersetzt, ergibt sich:
+\begin{IEEEeqnarray*}{rClL}
+   D(\v{1}) & = & D(p=1) = 0    & \Rightarrow a = b = c = 0 \\
+   D(\v{2}) & = & D(p=x) = 1    & \Rightarrow a = 1, b = c = 0 \\
+   D(\v{3}) & = & D(p=x^2) = 2x & \Rightarrow a = c = 0, b = 2 \\
+\end{IEEEeqnarray*}
 \begin{equation*}
-   A = \inlinepmatrix{0 & -1 & 1 \\ 0 & -1 & 0 \\ 0 & 2 & -1},
+   A = \inlinepmatrix{0 & -1 & 2 \\ 0 & -1 & 0 \\ 0 & 2 & -2}
 \end{equation*}
-denn für $p^\prime(x) = 1$ ist nur $a=1$, für $p^\prime(x) = x$ nur $b=1$
 \end{document}
