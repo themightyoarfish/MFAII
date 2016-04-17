@@ -6,32 +6,96 @@
 \begin{document}
 \maketitle
 \renewcommand{\v}[1]{\mbf{v}_{#1}}
-\section{}
-\subsection{}
-\subsection{}
-\subsection{}
 
 \section{}
-\subsection{}
-\subsection{}
-\subsection{}
-\begin{tikzpicture}
-   \draw[thick,->,name path=stdx] (0,0) -- ++(0:3) node[below right] {Kanonische Basis};
-   \draw[thick,->,name path=stdy] (0,0) -- ++(90:3);
 
-   \draw[thick,dashed,->,name path=bx] (0,0) -- (-45:3);
-   \draw[thick,dashed,->,name path=by] (0,0) -- (45:3) node[below right] {$\mathcal{B}$};
-
-   \draw[fill=red] (1,2) coordinate (v1) circle (2pt) node[above right=1em and .5em] {$\varphi_\mathcal{B}(\v{1})=(1.5,-0.5)$};
-   \draw[fill=red] (1,0) coordinate (v2) circle (2pt) node[above right=1em and .5em] {$\varphi_\mathcal{B}(\v{2})=(0.5,0.5)$};
-
-   \draw[dotted] (v1) -- ($(45:3)!(v1)!(0,0)$);
-   \draw[dotted] (v1) -- ($(-45:3)!(v1)!(0,0)$);
-   \draw[dotted] (v2) -- ($(45:3)!(v2)!(0,0)$);
-   \draw[dotted] (v2) -- ($(-45:3)!(v2)!(0,0)$);
-
-\end{tikzpicture}
 \subsection{}
+\begin{align*}
+   \varphi_\mathcal{B}(\v{i}) & = \varphi_\mathcal{B}(0\v{1} + \ldots + 1\v{i} + \ldots + 0\v{n}) \\
+                        & = (0,\ldots, 1, \ldots, 0)
+\end{align*}
+
+\subsection{}
+
+Sei $\alpha \in \mathbb{K}^n$ und $\mbf{v} = \sum_{i=1}^n \alpha_i \v{i}$ sowie $\mbf{u} = \sum_{i=1}^n \beta_i \mbf{u}$.
+
+\newcommand{\myphi}[1]{\varphi_\mathcal{B}\left(#1\right)}
+{
+   \renewcommand{\v}{\mathbf{v}}
+   \renewcommand{\u}{\mathbf{u}}
+   \begin{align*}
+      \myphi{\alpha\v + \u} & = \myphi{\alpha\sum_{i=1}^n \alpha_i \v{i} + \sum_{i=1}^n \beta_i \v{i}} \\
+                            & = \myphi{\sum_{i=1}^n (\alpha\alpha_i + \beta_i)\v{i}} \\
+                            & = (\alpha\alpha_1 + \beta_1 + \ldots + \alpha\alpha_n + \beta_n) \\
+                            & = (\alpha\alpha_, \ldots, \alpha\alpha_n) + (\beta_, \ldots, \beta_n) \\
+                            & = \alpha(\alpha_, \ldots, \alpha_n) + (\beta_, \ldots, \beta_n) \\
+                            & = \alpha\myphi{\v} + \myphi{\u}
+   \end{align*}
+}
+
+\subsection{}
+
+Seien $\mbf{x} \neq \mbf{y} \in V$.
+Da $\{\v{1}, \ldots, \v{n}\}$ eine Basis ist, existieren eindeutige $\alpha_i$ mit $\sum_{i=1}^n \alpha_i \v{i} =
+\mbf{x}$ und eindeutige $\beta_i$. mit $\sum_{i=1}^n \alpha_i \v{i} =
+\mbf{y}$.
+Wenn $\mbf{x} \neq \mbf{y}$, so können nicht alle $\alpha_i = \beta_i$ sein, sonst wäre die Darstellung nicht eindeutig.
+Also is die Funtkion injektiv. 
+
+Für $(\alpha_1,\ldots,\alpha_n)$ gibt es aber auch genau ein Urbild, nämlich $\alpha_1\v{1} + \ldots + \alpha_n\v{n}$.
+Sie ist also auch surjektiv, also bijektiv.
+
+\section{}
+
+\subsection{}
+
+\renewcommand{\b}[1]{\mbf{b_{#1}}}
+Es sei $\b{1} = \inlinepmatrix{1 \\ 1}$ und $\b{2} = \inlinepmatrix{1 \\ -1}$.
+\begin{align*}
+   \myphi{\v{}=(v_1,v_2)} & = \myphi{v_1 \cdot 0.5 \cdot (\b{1} + \b{2}) + v_2 \cdot 0.5 \cdot (\b{1} - \b{2})} \\
+                          & = \myphi{v_1 \cdot 0.5 \cdot \b{1} + v_1 \cdot 0.5 \cdot \b{2} + v_2 \cdot 0.5 \cdot \b{1} -
+v_2 \cdot 0.5 \cdot \b{2}}  \\
+                          & = \myphi{(v_1 + v_2) \cdot 0.5  \cdot \b{1} + (v_1 - v_2) \cdot 0.5 \cdot \b{2}}  \\
+                          & = \myphi{(v_1 + v_2) \cdot 0.5, (v_1 - v_2) \cdot 0.5}  \\
+\end{align*}
+
+\subsection{}
+
+\begin{align*}
+   \myphi{\inlinepmatrix{1 \\ 2}} &= (1.5, -0.5) \\
+   \myphi{\inlinepmatrix{1 \\ 0}} &= (0.5, 0.5)
+\end{align*}
+
+\subsection{}
+\begin{center}
+   \begin{tikzpicture}
+      \draw[thick,->,name path=stdx] (0,0) -- ++(0:3) node[below right] {Kanonische Basis};
+      \draw[thick,->,name path=stdy] (0,0) -- ++(90:3);
+
+      \draw[thick,dashed,->,name path=bx] (0,0) -- (-45:3);
+      \draw[thick,dashed,->,name path=by] (0,0) -- (45:3) node[below right] {$\mathcal{B}$};
+
+      \draw[fill=red] (1,2) coordinate (v1) circle (2pt) node[above right=1em and .5em] {$\varphi_\mathcal{B}(\v{1})=(1.5,-0.5)$};
+      \draw[fill=red] (1,0) coordinate (v2) circle (2pt) node[above right=1em and .5em] {$\varphi_\mathcal{B}(\v{2})=(0.5,0.5)$};
+
+      \draw[dotted] (v1) -- ($(45:3)!(v1)!(0,0)$);
+      \draw[dotted] (v1) -- ($(-45:3)!(v1)!(0,0)$);
+      \draw[dotted] (v2) -- ($(45:3)!(v2)!(0,0)$);
+      \draw[dotted] (v2) -- ($(-45:3)!(v2)!(0,0)$);
+
+   \end{tikzpicture}
+\end{center}
+\subsection{}
+
+Aus 
+\begin{align*}
+   \frac{v_1}{2} + \frac{v_2}{2} & = a_1 \\
+   \frac{v_1}{2} - \frac{v_2}{2} & = a_2 \\
+\end{align*}
+folgt durch elementare Umformungen $v_1 = a_1 + a_2$ und $v_2 = a_1 - a_2$, sodass
+\begin{equation*}
+   \varphi_\mathcal{B}^{-1}\left(\inlinepmatrix{a_1 \\ a_2}\right) = \inlinepmatrix{a_1 + a_2 \\ a_1 - a_2}.
+\end{equation*}
 
 \section{}
 \subsection{}

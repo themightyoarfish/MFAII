@@ -29,7 +29,7 @@ IEEEtrantools, titlesec, titling, mathptmx, mathtools}
    %% Metadata
    \author{Rasmus Diederichsen \and Laura Goerke \and Tim Brockmeyer \and Katharina
    Filodda}
-   \date{\today \arabic{sheetno}}
+   \date{\today}
    \title{Mathematik für Anwender II --- Blatt \arabic{sheetno}}
    \hypersetup{
       pdftitle          = {\thetitle},
