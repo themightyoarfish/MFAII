@@ -6,11 +6,12 @@
 \newcommand*{\sheet}[1]{\setcounter{sheetno}{#1}}
 
 %% packages
-\RequirePackage{lmodern, hyperref, array, amsmath, amsthm, amssymb, microtype,
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{lmodern, array, amsmath, amsthm, amssymb, microtype,
 IEEEtrantools, titlesec, titling, mathptmx, mathtools}
-\RequirePackage[utf8x]{inputenc}
 \RequirePackage[dvipsnames]{xcolor}
 \RequirePackage[ngerman]{babel}
+\RequirePackage[pdfencoding=unicode, psdextra]{hyperref}
 
 \fontfamily{ptm}\selectfont
 
@@ -18,11 +19,6 @@ IEEEtrantools, titlesec, titling, mathptmx, mathtools}
 \titleformat{\section}[hang]{\bf}{Aufgabe \arabic{sheetno}.\arabic{section}}{1em}{}[]
 \titleformat{\subsection}[hang]{\bf}{(\arabic{subsection})}{1em}{}[]
 
-%% Metadata
-\author{Rasmus Diederichsen \and Laura Goerke \and Tim Brockmeyer \and Katharina
-Filodda}
-\date{\today}
-\title{Mathematik für Anwender II --- Blatt \arabic{sheetno}}
 
 %% operators
 \DeclareMathOperator*{\argmax}{arg\,max}
@@ -30,6 +26,11 @@ Filodda}
 
 %% At begin document, do this
 \AtBeginDocument{
+   %% Metadata
+   \author{Rasmus Diederichsen \and Laura Goerke \and Tim Brockmeyer \and Katharina
+   Filodda}
+   \date{\today \arabic{sheetno}}
+   \title{Mathematik für Anwender II --- Blatt \arabic{sheetno}}
    \hypersetup{
       pdftitle          = {\thetitle},
       pdfauthor         = {\theauthor},
