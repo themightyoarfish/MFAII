@@ -43,7 +43,7 @@ $f$ ist also linear.
    \end{pmatrix} \\
    g(p_1) + g(p_2) &= \begin{pmatrix}
    0 & a_1 - 2 \\
-   0 & -b_2 + c_1
+   0 & -b_1 + c_1
 \end{pmatrix} + \begin{pmatrix}
    0 & a_2 - 2 \\
    0 & -b_2 + c_2
@@ -229,8 +229,8 @@ Seien $(z_1, z_2, z_3)$ und $(y_1, y_2, y_3) \in \mathbb{C}^3$.
 \begin{align*}
    f(z_1 + y_1, z_2 + y_2, z_3 + y_3) & = (z_1 + y_1 +i(z_2 + y_2) - (z_3 + y_3), i(z_1 + y_1) - (z_2 + y_2) + (1+i)(z_3 + y_3)) \\
                                       & = (z_1 + y_1 + iz_2 + iy_2 - z_3 - y_3, iz_1 + iy_1 - z_2 - y_2 + (1+i)z_3 + (1+i)y_3)   \\
-                                      & = (y_1 + iy_2 - y_3, iy_1 - y_2 + (1+i)y_3) + (y_1 + iy_2 - y_3, iy_1 - y_2 + (1+i)y_3)  \\
-                                      & = f(y_1, y_2, y_3) + f(y_1, y_2, y_3)
+                                      & = (z_1 + iz_2 - z_3, iz_1 - z_2 + (1+i)z_3) + (y_1 + iy_2 - y_3, iy_1 - y_2 + (1+i)y_3)  \\
+                                      & = f(z_1, z_2, z_3) + f(y_1, y_2, y_3)
 \end{align*}
 
 Sei zudem $\alpha \in \mathbb{C}$.
